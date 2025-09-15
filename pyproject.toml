@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=62", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "surface-msd"
+version = "0.1.0"
+readme = "README.rst"
+requires-python = ">=3.9"
+dependencies = ["numpy","MDAnalysis>=2.3","pytim","tqdm"]
+
+[project.scripts]
+layer-msd = "surface_msd.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["surface_msd*"]
+
